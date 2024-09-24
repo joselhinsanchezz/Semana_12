@@ -37,10 +37,13 @@ function displayUsers(data) {
     // Iterar sobre el array de usuarios
     if (Array.isArray(data)) {
         data.forEach(user => {
-            // Agregar los usuarios a la lista
+            // Crear la cantidad de estrellas como emojis
+            let stars = '⭐'.repeat(user.numberrange);
+
+            // Agregar los usuarios a la lista con las estrellas en emoji
             userListElement.innerHTML += `
             <li class="list-group-item">
-                Nombre: ${user.name}, Compañía: ${user.company}, Número de Estrellas: ${user.numberrange}
+                Nombre: ${user.name}, Compañía: ${user.company}, Número de Estrellas: ${stars}
             </li>`;
 
             // Agregar los nombres de los usuarios al select
